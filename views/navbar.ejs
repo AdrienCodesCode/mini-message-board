@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        <% links.forEach( (l,idx)=> { %>
+            <li>
+                <a href="<%= l.href %>">
+                    <%=l.text%>
+                </a>
+            </li>
+            <% }) %>
+    </ul>
+</nav>

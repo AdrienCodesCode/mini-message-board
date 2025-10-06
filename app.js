@@ -3,7 +3,6 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import indexRouter from "./routes/index.js"
-import aboutRouter from "./routes/about.js"
 
 const app = express();
 const PORT = 3000;
@@ -12,36 +11,37 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ===== Middleware =====
-app.set("view engine", "ejs");      // Set View Engine as EJS / EJS points to the views folder by default (1)
-app.use(express.json());            // Parse JSON Bodies / to have access to req.body (2)
-app.use(express.static("public"))   // Serve static files / static files middleware/route handler (3)
-app.use(morgan("dev"));             // Log every request
+app.set("view engine", "ejs");                      // Set View Engine as EJS / EJS points to the views folder by default (1)
+app.use(express.json());                            // Parse JSON Bodies / to have access to req.body (2)
+app.use(express.static("public"))                   // Serve static files / static files middleware/route handler (3)
+app.use(express.urlencoded({ extended: true }));    // 
+app.use(morgan("dev"));                             // Log every request
 
 // ===== Routes =====
-app.use("/", indexRouter)           //Routes
-app.use("/about", aboutRouter)
+app.use("/", indexRouter)                           //Routes
+
 
 
 
 
 
 // ===== 404 handler =====
-app.use((req, res) => {             // 404 HANDLER - add variable to mention the req url ?
-    res.status(404).render("404")   
+app.use((req, res) => {                             // 404 HANDLER - add variable to mention the req url ?
+    res.status(404).render("404")
 })
 
 // ===== Error handler =====
-app.use((err, req, res, next) => {  // ERROR HANDLER (6)
+app.use((err, req, res, next) => {                  // ERROR HANDLER (6)
     console.error(err);
     res.status(err.statusCode || 500).send(err)
 })
 
 // ===== Start server =====
-app.listen(PORT, (err) => { 
-    if(err){
+app.listen(PORT, (err) => {
+    if (err) {
         throw err
     }
-    console.log(`Server running on http://localhost:${PORT}`) 
+    console.log(`Server running on http://localhost:${PORT}`)
 })
 
 /*
