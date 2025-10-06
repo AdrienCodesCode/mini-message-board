@@ -7,20 +7,20 @@ const router = Router();
 
 const messages = [
     {
-        text: "Hi there!",
-        user: "Amando",
+        text: "Hi there, I'm a robot bro!",
+        user: "Robotbro",
         added: new Date()
     },
     {
-        text: "Hello World!",
-        user: "Charles",
+        text: "Hello World, I'm an Alien!",
+        user: "Alien Bob",
         added: new Date()
     }
 ];
 
 const links = [
-    { href: "/", text: "Home" },
-    { href: "/new", text: "Form" }
+    { href: "/", text: "to Home bro" },
+    { href: "/new", text: "click here to add a new message bro" }
 ];
 
 

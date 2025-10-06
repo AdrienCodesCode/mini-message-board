@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <h1>New Message Form</h1>
+  <h1>Add a message bro</h1>
 
   <%- include("navbar", {links: links}) %>
 
     <form method="POST" action="/new">
-      <input type="text" name="userName" placeholder="user">
-      <input type="text" name="messageText" placeholder="message">
+      <input type="text" name="userName" placeholder="type your name here like Ink or Mme Dousse" required>
+      <input type="text" name="messageText" placeholder="some sweet message" required>
       <button type="submit">Submit</button>
     </form>
 

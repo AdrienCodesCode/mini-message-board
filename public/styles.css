@@ -1,0 +1,123 @@
+/* styles.css - minimal clean styling */
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+    align-items: center;       /* center text vertically */
+  justify-content: center;   /* center horizontally */
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav li {
+  display: flex;
+}
+
+nav a {
+  display: flex;
+  align-items: center;       /* center text vertically */
+  justify-content: center;   /* center text horizontally */
+  height: 40px;
+  padding: 0 1.5rem;         /* ← CHANGED: add horizontal padding */
+  text-decoration: none;
+  color: #0070f3;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+
+nav li:hover {
+  background-color: #f0f0f0;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+li {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+li div {
+  margin-bottom: 0.5rem;
+}
+
+li a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #2563eb;
+}
+
+li a:hover {
+  color: #1d4ed8;
+}
+
+
+form {
+  max-width: 500px;
+  margin: 0 auto;                /* center horizontally */
+  background: #fff;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;                      /* spacing between fields */
+}
+
+form input[type="text"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input[type="text"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); /* subtle glow */
+}
+
+form button {
+  padding: 0.75rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+form button:hover {
+  background: #1d4ed8;
+}
+
